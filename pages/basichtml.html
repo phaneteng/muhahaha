@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="fullname" placeholder="กรอกชื่อ-นามสกุล"><br>
+        <input type="email" name="email" placeholder="example@email.com"><br>
+        <input type="password" name="password" minlength="8"><br>
+        <input type="date" name="birthdate" min="1900-01-01" max="2025-12-31">
+        <input type="color" name="favorite_color" value="#059669">
+        <input type="range" name="satisfaction" min="0" max="10" step="1"><br>
+        <input type="file" name="avatar" accept="image/*">
+
+        <p>ทักษะที่มี:</p>
+
+        <label>
+            <input type="checkbox" name="skills" value="html"> HTML
+        </label>
+        <label>
+            <input type="checkbox" name="skills" value="css"> CSS
+        </label>
+        <label>
+            <input type="checkbox" name="skills" value="js"> JavaScript
+        </label>
+
+        <p>เพศ:</p>
+        
+        <label>
+        <input type="radio" name="gender" value="male"> ชาย
+        </label>
+        <label>
+            <input type="radio" name="gender" value="female"> หญิง
+        </label>
+        <label>
+            <input type="radio" name="gender" value="other"> อื่นๆ
+        </label><br>
+
+        <input type="text"
+            id="username"
+            name="username"
+            placeholder="กรอกชื่อผู้ใช้"
+            required
+            autofocus
+            maxlength="20">
+
+        <!-- Input แบบ Disabled -->
+        <input type="text"
+            name="membership"
+            value="Gold Member"
+            disabled>
+
+        <!-- Input แบบ Readonly -->
+        <input type="text"
+            name="user_id"
+            value="USR-001234"
+            readonly><br><br>
+
+        <label for="province">จังหวัด:</label><br>
+            <select id="province" name="province">
+                <option value="">-- กรุณาเลือก --</option>
+                <option value="bkk">กรุงเทพมหานคร</option>
+                <option value="nkp">นครปฐม</option>
+                <option value="cm">เชียงใหม่</option>
+            </select><br><br>
+
+        <label for="car">รถยนต์:</label><br>
+            <select id="car" name="car">
+                <optgroup label="รถญี่ปุ่น">
+                    <option value="toyota">Toyota</option>
+                    <option value="honda">Honda</option>
+                </optgroup>
+                <optgroup label="รถเยอรมัน">
+                    <option value="bmw">BMW</option>
+                    <option value="mercedes">Mercedes</option>
+                </optgroup>
+            </select><br><br>
+
+        <label for="skills">ทักษะ (เลือกได้หลายรายการ):</label><br>
+            <select id="skills" name="skills" multiple size="4">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="js">JavaScript</option>
+                <option value="python">Python</option>
+            </select><br><br>
+
+        <label for="message">ข้อความ:</label><br>
+            <textarea id="message"
+                name="message"
+                rows="5"
+                cols="40"
+                placeholder="พิมพ์ข้อความของคุณที่นี่..."
+                maxlength="500"></textarea><br>
+
+        <input type="tel"
+            name="phone"
+            pattern="0[0-9]{2}-[0-9]{3}-[0-9]{4}"
+            placeholder="0xx-xxx-xxxx"
+            title="กรุณากรอกในรูปแบบ 0xx-xxx-xxxx"><br>
+
+        <!-- ปุ่ม Submit - ส่งข้อมูล Form -->
+        <button type="submit">ส่งข้อมูล</button>
+
+        <!-- ปุ่ม Reset - ล้างข้อมูลในฟอร์ม -->
+        <button type="reset">ล้างข้อมูล</button>
+
+        <!-- ปุ่มทั่วไป - ไม่ทำอะไรโดยอัตโนมัติ -->
+        <button type="button">คลิกฉัน</button>
+
+        <!-- Input แบบ Submit (วิธีเก่า) -->
+        <input type="submit" value="ส่งข้อมูล">
+
+        <!-- ปุ่มพร้อม Icon -->
+        <button type="submit">
+            <span>📤</span> ส่งข้อมูล
+        </button><br><br>
+
+        <label for="browser">เลือก Browser:</label>
+        <input list="browsers" id="browser" name="browser">
+
+        <datalist id="browsers">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Safari">
+            <option value="Edge">
+            <option value="Opera">
+        </datalist><br>
+
+        <fieldset>
+            <legend>ข้อมูลส่วนตัว</legend>
+            <label>ชื่อ: <input type="text" name="firstname"></label>
+            <label>นามสกุล: <input type="text" name="lastname"></label>
+        </fieldset>
+    
+        <fieldset>
+            <legend>ข้อมูลติดต่อ</legend>
+            <label>อีเมล: <input type="email" name="email"></label>
+            <label>โทรศัพท์: <input type="tel" name="phone"></label>
+        </fieldset>
+
+        <br>
+        <!-- เบอร์โทรศัพท์ไทย (0xx-xxx-xxxx) -->
+    </form>
+
+    <form action="/register" method="POST">
+    <fieldset>
+        <legend>สมัครสมาชิก</legend>
+        
+        <!-- ชื่อผู้ใช้ -->
+        <div class="form-group">
+            <label for="username">ชื่อผู้ใช้ *</label>
+            <input type="text"
+                   id="username"
+                   name="username"
+                   pattern="[a-z0-9_]{4,16}"
+                   title="4-16 ตัวอักษร (a-z, 0-9, _)"
+                   required>
+        </div>
+        
+        <!-- อีเมล -->
+        <div class="form-group">
+            <label for="email">อีเมล *</label>
+            <input type="email"
+                   id="email"
+                   name="email"
+                   placeholder="example@email.com"
+                   required>
+        </div>
+        
+        <!-- รหัสผ่าน -->
+        <div class="form-group">
+            <label for="password">รหัสผ่าน *</label>
+            <input type="password"
+                   id="password"
+                   name="password"
+                   minlength="8"
+                   pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
+                   title="ต้องมีตัวอักษรและตัวเลข อย่างน้อย 8 ตัว"
+                   required>
+        </div>
+        
+        <!-- วันเกิด -->
+        <div class="form-group">
+            <label for="birthdate">วันเกิด</label>
+            <input type="date"
+                   id="birthdate"
+                   name="birthdate"
+                   max="2010-01-01">
+        </div>
+        
+        <!-- ยอมรับเงื่อนไข -->
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="agree" required>
+                ยอมรับเงื่อนไขการใช้งาน *
+            </label>
+        </div>
+        
+        <button type="submit">สมัครสมาชิก</button>
+    </fieldset>
+    </form>
+</body>
+</html>
